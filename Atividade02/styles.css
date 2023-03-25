@@ -1,0 +1,19 @@
+label{
+    margin: 8px;
+    display: inline-block;
+    width: 170px;
+}
+h1{
+    font: sans-serif;
+}
+
+form{
+    font-family: sans-serif;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+}
