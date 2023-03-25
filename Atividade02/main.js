@@ -89,6 +89,7 @@ window.addEventListener("load", function () {
         var username = document.getElementById("username").value;
 
         if (emails.indexOf(email) !== -1) {
+            alert("Email já foi utilizado!");
             return;
         }
 
