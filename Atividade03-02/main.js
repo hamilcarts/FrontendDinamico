@@ -161,15 +161,11 @@ addTaskButton.addEventListener('click', () => {
 });
 
 addButton.addEventListener('click', () => {
-    // Criação dos elementos HTML para a nova tarefa
-    // ...
 
-    // Adiciona event listener para tornar a tarefa arrastável
     taskDiv.addEventListener('dragstart', (event) => {
         event.dataTransfer.setData('text/plain', taskDiv.id);
     });
 
-    // Adiciona event listener para receber a tarefa arrastada
     taskLists.forEach((list) => {
         list.addEventListener('dragover', (event) => {
             event.preventDefault();
@@ -183,38 +179,32 @@ addButton.addEventListener('click', () => {
         });
     });
 
-    // Adiciona a nova tarefa à lista "ToDo"
     todoList.appendChild(taskDiv);
 });
 
-// armazena o status atual na div "to do"
 const divToDo = document.querySelector('#to-do');
 localStorage.setItem('toDoTasks', divToDo.innerHTML);
 
-// armazena o status atual na div "doing"
 const divDoing = document.querySelector('#doing');
 localStorage.setItem('doingTasks', divDoing.innerHTML);
 
-// armazena o status atual na div "done"
 const divDone = document.querySelector('#done');
 localStorage.setItem('doneTasks', divDone.innerHTML);
 
 document.addEventListener('DOMContentLoaded', () => {
-    // recupera o status armazenado da div "to do"
+
     const divToDo = document.querySelector('#to-do');
     const toDoTasks = localStorage.getItem('toDoTasks');
     if (toDoTasks) {
         divToDo.innerHTML = toDoTasks;
     }
 
-    // recupera o status armazenado da div "doing"
     const divDoing = document.querySelector('#doing');
     const doingTasks = localStorage.getItem('doingTasks');
     if (doingTasks) {
         divDoing.innerHTML = doingTasks;
     }
 
-    // recupera o status armazenado da div "done"
     const divDone = document.querySelector('#done');
     const doneTasks = localStorage.getItem('doneTasks');
     if (doneTasks) {
