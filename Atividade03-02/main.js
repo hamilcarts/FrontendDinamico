@@ -55,17 +55,17 @@ addTaskButton.addEventListener('click', () => {
         const editButton = document.createElement('button');
         const deleteButton = document.createElement('button');
         taskDiv.draggable = 'true';
-
+        
         taskDiv.style.padding = '10px';
 
         if (!taskTitle) {
             alert('Por favor insira título da tarefa!');
             return;
-        }
-        if (!taskDescription) {
+          }
+          if (!taskDescription) {
             alert('Por favor a descrição da tarefa!');
             return;
-        }
+          }
 
         taskTitleElem.textContent = taskTitle;
         taskDescriptionElem.textContent = taskDescription;
@@ -111,7 +111,7 @@ addTaskButton.addEventListener('click', () => {
             editTitleLabel.textContent = 'Título';
             editTitleInput.type = 'text';
             editTitleInput.value = taskTitle;
-
+            
             editDescriptionLabel.textContent = 'Descrição';
             editDescriptionInput.type = 'text';
             editDescriptionInput.value = taskDescription;
