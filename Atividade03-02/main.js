@@ -5,9 +5,12 @@ addTaskButton.addEventListener('click', () => {
     const titleLabel = document.createElement('label');
     const titleInput = document.createElement('input');
     const descriptionLabel = document.createElement('label');
+    const whitelabel = document.createElement('br');
     const descriptionInput = document.createElement('input');
     const submitButton = document.createElement('button');
     const cancelButton = document.createElement('button');
+
+    taskForm.style.margin = '10px';
 
     titleInput.placeholder = 'Título';
     titleInput.type = 'text';
@@ -32,6 +35,7 @@ addTaskButton.addEventListener('click', () => {
     taskForm.appendChild(titleInput);
     taskForm.appendChild(descriptionLabel);
     taskForm.appendChild(descriptionInput);
+    taskForm.appendChild(whitelabel);
     taskForm.appendChild(submitButton);
     taskForm.appendChild(cancelButton);
 
@@ -51,8 +55,17 @@ addTaskButton.addEventListener('click', () => {
         const editButton = document.createElement('button');
         const deleteButton = document.createElement('button');
         taskDiv.draggable = 'true';
-        taskDiv.style.border = '1px solid black';
+
         taskDiv.style.padding = '10px';
+
+        if (!taskTitle) {
+            alert('Por favor insira título da tarefa!');
+            return;
+        }
+        if (!taskDescription) {
+            alert('Por favor a descrição da tarefa!');
+            return;
+        }
 
         taskTitleElem.textContent = taskTitle;
         taskDescriptionElem.textContent = taskDescription;
@@ -98,6 +111,7 @@ addTaskButton.addEventListener('click', () => {
             editTitleLabel.textContent = 'Título';
             editTitleInput.type = 'text';
             editTitleInput.value = taskTitle;
+
             editDescriptionLabel.textContent = 'Descrição';
             editDescriptionInput.type = 'text';
             editDescriptionInput.value = taskDescription;
@@ -159,7 +173,7 @@ addTaskButton.addEventListener('click', () => {
         });
     });
 });
-
+// arrastar a div
 addButton.addEventListener('click', () => {
 
     taskDiv.addEventListener('dragstart', (event) => {
@@ -182,6 +196,7 @@ addButton.addEventListener('click', () => {
     todoList.appendChild(taskDiv);
 });
 
+// armazenar o status atual
 const divToDo = document.querySelector('#to-do');
 localStorage.setItem('toDoTasks', divToDo.innerHTML);
 
