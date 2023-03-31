@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+}
+
+.task-list {
+    text-align: center;
+    flex-basis: 33.33%;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+ul {
+    list-style: none;
+    
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+.hr60 {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.hrvertical {
+    width: 1px;
+    height: 100%;
+    border-left: 1px solid #000000;
+    margin: 10px;
+}
+
+.taskDiv {
+    border: 1px solid black;
+    padding: 10px;
+  }
